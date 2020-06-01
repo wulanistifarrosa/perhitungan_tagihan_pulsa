@@ -6,4 +6,3 @@ def discount(jumlah_tagihan):
     elif jumlah_tagihan >= 100000:
         return jumlah_tagihan - 10000,10000
     else:
-        return jumlah_tagihan, 0
