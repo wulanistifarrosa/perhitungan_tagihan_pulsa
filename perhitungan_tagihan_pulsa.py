@@ -53,25 +53,4 @@ with open(nama_file, 'w') as outf:
     writer = csv.DictWriter(outf, fieldnames=header)
     writer.writeheader()
     
-    for row in data:
-        minggu,total_sms,menit_tlp_sama,menit_tlp_lain,totalpulsa,total_kuota_sosmed,total_kuota_lainnya,totalkuota2,total_tagihan = row
-        writer.writerow({'Minggu ke-': minggu,
-                         'Jumlah SMS': total_sms,
-                         'Menit telepon ke sesama operator(menit)': menit_tlp_sama,
-                         'Menit telepon ke operaator lain(menit)': menit_tlp_lain,
-                         'Total pulsa (Rp)' : totalpulsa,
-                         'Kuota sosmed (kb)' : total_kuota_sosmed,
-                         'Kuota lainnya (kb)' : total_kuota_lainnya,
-                         'Tagihan kuota terpakai (Rp)' : totalkuota2,
-                         'Tagihan/minggu' : total_tagihan
-                         })
-
-list_tagihan = [data[i][8] for i in range(len(data))]
-jumlah_tagihan = 0
-for row in data:
-    jumlah_tagihan += row[8]
-
-tagihan_akhir,potongan = discount(jumlah_tagihan)
-    
-print("Jumlah tagihan", nama, "dengan No. telepon", no_telp, "pada bulan ini adalah sebesar Rp.", jumlah_tagihan)
-print("Anda mendapatkan potongan sebesar", potongan, "maka jumlah akhir tagihan anda adalah", tagihan_akhir)
+   
