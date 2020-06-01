@@ -7,6 +7,7 @@ def discount(jumlah_tagihan):
         return jumlah_tagihan - 10000,10000
     else:
         return jumlah_tagihan, 0
+    coba
     
 #mulai program
 input_data = True
